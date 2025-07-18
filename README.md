@@ -7,7 +7,9 @@ A comprehensive Model Context Protocol (MCP) implementation using n8n workflows,
 This project demonstrates a complete MCP ecosystem built with n8n automation platform, showcasing the seamless integration between AI agents and web scraping capabilities. The implementation consists of two main components:
 
 Scraping Agent Client: An intelligent conversational agent that can understand user requests and perform web scraping operations
-MCP Server: A dedicated server that provides web scraping services through the Firecrawl API
+MCP Server: A dedicated server that provides web scraping services through the Firecrawl API   
+
+
 🏗️ Architecture
 The system follows a client-server architecture where the MCP client communicates with the MCP server through standardized protocols. The client leverages Google Gemini's language model capabilities to understand natural language requests and translate them into appropriate scraping operations.
 
@@ -27,6 +29,8 @@ n8n instance (self-hosted or cloud)
 Google Gemini API key
 Firecrawl API key
 ngrok account (for exposing local endpoints)
+
+
 📦 Installation
 1. Clone the Repository
 git clone https://github.com/dixitabhi1/mcp-n8n-firecrawl.git
@@ -47,6 +51,9 @@ Replace fc-1471844158c0428ea5980bea02469c8c with your Firecrawl API key
 HTTP Header Authentication
 Create credentials for "HTTP Header Auth"
 Configure the header authentication for MCP server access
+
+
+
 ⚙️ Configuration
 Server Setup
 Activate the MCP Server Workflow
@@ -70,6 +77,9 @@ Activate the Client Workflow
 
 Click Activate to start the scraping agent
 Note the chat webhook URL for testing
+
+
+
 🚀 Usage
 Starting a Conversation
 Access the Chat Interface
@@ -94,6 +104,9 @@ Content-Type: application/json
 }
 Server Endpoint
 POST https://your-domain.ngrok-free.app/mcp/da34892c-8018-4f03-9322-f49a2ed49853
+
+
+
 🔧 Customization
 Modifying Scraping Parameters
 The Firecrawl scraping tool can be customized by modifying the JSON body in the scrape node:
@@ -117,6 +130,9 @@ To extend the agent's capabilities:
 Create new tool nodes in the server workflow
 Connect them to the MCP Server Trigger
 Update the client to recognize new tool capabilities
+
+
+
 🔍 Monitoring and Debugging
 Workflow Execution Logs
 Monitor execution logs in n8n for both workflows
@@ -135,6 +151,11 @@ Memory Issues
 
 Monitor conversation context length
 Clear memory buffer if responses become inconsistent
+
+
+
+
+
 📊 Performance Considerations
 Rate Limiting
 Firecrawl API: Check your plan's rate limits
@@ -143,6 +164,9 @@ Optimization Tips
 Implement caching for frequently scraped URLs
 Use batch processing for multiple URL requests
 Configure appropriate timeout values
+
+
+
 🔐 Security
 Best Practices
 Store API keys securely using n8n's credential system
@@ -153,6 +177,9 @@ Access Control
 Restrict webhook access using authentication headers
 Monitor usage patterns for unusual activity
 Implement logging for audit trails
+
+
+
 🤝 Contributing
 We welcome contributions to improve this MCP implementation:
 
@@ -164,6 +191,9 @@ Development Guidelines
 Follow n8n workflow best practices
 Document any new nodes or configurations
 Test thoroughly before submitting
+
+
+
 📄 License
 This project is licensed under the MIT License - see the LICENSE file for details.
 
@@ -172,6 +202,10 @@ n8n for the powerful automation platform
 Firecrawl for reliable web scraping capabilities
 Google Gemini for advanced language model integration
 Model Context Protocol for standardized AI tool communication
+
+
+
+
 📞 Support +91 9555762116
 For questions, issues, or contributions:
 
