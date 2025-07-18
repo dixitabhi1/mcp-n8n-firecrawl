@@ -172,10 +172,10 @@ n8n for the powerful automation platform
 Firecrawl for reliable web scraping capabilities
 Google Gemini for advanced language model integration
 Model Context Protocol for standardized AI tool communication
-📞 Support
+📞 Support +91 9555762116
 For questions, issues, or contributions:
 
 Create an issue in this repository
 Contact: abhishek1530002@gmail.com
-Documentation: Project Wiki
+
 Built with ❤️ using n8n, Firecrawl, and Google Gemini
