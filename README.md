@@ -29,7 +29,7 @@ Firecrawl API key
 ngrok account (for exposing local endpoints)
 📦 Installation
 1. Clone the Repository
-git clone https://github.com/yourusername/mcp-n8n-firecrawl.git
+git clone https://github.com/dixitabhi1/mcp-n8n-firecrawl.git
 cd mcp-n8n-firecrawl
 2. Import n8n Workflows
 Open your n8n instance
