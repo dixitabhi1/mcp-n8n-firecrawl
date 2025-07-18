@@ -1,0 +1,142 @@
+{
+  "name": "SCRAPING AGENT",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "c5f57233-78c3-4bc4-abdc-09e4c6655541",
+      "name": "When chat message received",
+      "webhookId": "91178f0e-a59d-4c0a-b006-f6d3a32d702d"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        208,
+        0
+      ],
+      "id": "b7a5833e-db1c-48c0-911f-c304d595366a",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "contextWindowLength": 15
+      },
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        224,
+        208
+      ],
+      "id": "2f5d5ef5-bc86-4db1-abfa-1bd390fbb9fb",
+      "name": "Simple Memory"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1,
+      "position": [
+        0,
+        208
+      ],
+      "id": "fae56e83-ac7d-4798-80e4-998a5d58263e",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "qko5hVr9kgJJr3gq",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sseEndpoint": "https://gibbon-evolving-secretly.ngrok-free.app/mcp/da34892c-8018-4f03-9322-f49a2ed49853",
+        "authentication": "headerAuth"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpClientTool",
+      "typeVersion": 1,
+      "position": [
+        672,
+        256
+      ],
+      "id": "4ea04a00-767c-4fb5-a338-a456846853c3",
+      "name": "MCP  scrape Client",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "B6scynQnKgaFrBiG",
+          "name": "Firecrwal MCP server"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "MCP  scrape Client": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "747db6dc-8583-4236-8204-ec226d1a43e3",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e02f99e120eab1423b0970c36adbcbae7529f7279308a44f5448237968172cb3"
+  },
+  "id": "jNALxPfPAkdpBsyJ",
+  "tags": []
+}

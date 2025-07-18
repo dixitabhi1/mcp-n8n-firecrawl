@@ -1,0 +1,79 @@
+{
+  "name": "MCP server Firecrwal",
+  "nodes": [
+    {
+      "parameters": {
+        "path": "da34892c-8018-4f03-9322-f49a2ed49853"
+      },
+      "type": "@n8n/n8n-nodes-langchain.mcpTrigger",
+      "typeVersion": 2,
+      "position": [
+        -160,
+        -96
+      ],
+      "id": "e5c30683-693a-44ac-806a-35b0e6a477ab",
+      "name": "MCP Server Trigger",
+      "webhookId": "da34892c-8018-4f03-9322-f49a2ed49853"
+    },
+    {
+      "parameters": {
+        "toolDescription": "Used to scrape a URL and get its content.",
+        "method": "POST",
+        "url": "https://api.firecrawl.dev/v1/scrape",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer fc-1471844158c0428ea5980bea02469c8c"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "{\n  \"url\": \"https://docs.firecrawl.dev\",\n  \"formats\": [\n    \"markdown\"\n  ]\n}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequestTool",
+      "typeVersion": 4.2,
+      "position": [
+        256,
+        96
+      ],
+      "id": "f7ca6803-4a6e-492e-958b-e5cb0f989e6a",
+      "name": "scrape"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "scrape": {
+      "ai_tool": [
+        [
+          {
+            "node": "MCP Server Trigger",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "9b43e48e-29a1-4bd6-aee3-cb11ad4cdcac",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "e02f99e120eab1423b0970c36adbcbae7529f7279308a44f5448237968172cb3"
+  },
+  "id": "xKFPSR1QHuZ0Rk60",
+  "tags": [
+    {
+      "createdAt": "2025-07-14T10:58:58.377Z",
+      "updatedAt": "2025-07-14T10:58:58.377Z",
+      "id": "H4we22f5gakUgzx8",
+      "name": "MCP server"
+    }
+  ]
+}
