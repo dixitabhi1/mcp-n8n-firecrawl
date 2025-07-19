@@ -11,6 +11,8 @@ MCP Server: A dedicated server that provides web scraping services through the F
 
 
 🏗️ Architecture
+
+
 The system follows a client-server architecture where the MCP client communicates with the MCP server through standardized protocols. The client leverages Google Gemini's language model capabilities to understand natural language requests and translate them into appropriate scraping operations.
 
 Components
